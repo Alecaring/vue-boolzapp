@@ -9,11 +9,26 @@
 .none {
     display: none;
 }
+
+.overflow-scroll-contact {
+    overflow: scroll;
+    height: 70vh;
+    
+}
+.scroll-chats {
+    overflow: scroll;
+    height: 80vh;
+}
+
 .truncate {
-    white-space: nowrap; /* Impedisce al testo di andare a capo */
-    overflow: hidden; /* Nasconde il testo che supera l'elemento */
-    text-overflow: ellipsis; /* Aggiunge l'ellissi al testo troncato */
-    width: 100%; /* Imposta una larghezza massima (adattala secondo le tue esigenze) */
+    white-space: nowrap;
+    /* Impedisce al testo di andare a capo */
+    overflow: hidden;
+    /* Nasconde il testo che supera l'elemento */
+    text-overflow: ellipsis;
+    /* Aggiunge l'ellissi al testo troncato */
+    width: 100%;
+    /* Imposta una larghezza massima (adattala secondo le tue esigenze) */
 }
 
 
@@ -24,18 +39,21 @@
     height: 100vh;
     background-color: #f0f2f5;
 }
+
 .inner-nav-container {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
+
 .img-avatar-user {
     width: 50px;
     height: 50px;
     margin: 0rem 2rem;
     border-radius: 50%;
 }
+
 .inner-ul-nav {
     padding: 1.5rem 1rem;
     list-style-type: none;
@@ -50,11 +68,13 @@
     padding: .5rem;
     background-color: white;
 }
+
 .main-serch-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
+
 .container-inner-input {
     display: flex;
     align-items: center;
@@ -64,15 +84,18 @@
     border-radius: 1rem;
     background-color: #f0f2f5;
 }
+
 .search-inner-div-inpit {
     padding: 0 1rem 0 .6rem;
 }
+
 .input {
     width: 100%;
     border: none;
     font-size: 1rem;
     background-color: inherit;
 }
+
 .svg-search-container {
     margin: 0 .6rem 0 1rem;
 }
@@ -86,6 +109,7 @@
     background-color: #53bdeb;
     padding: 1rem 0;
 }
+
 .svg-notification-bell {
     display: flex;
     align-items: center;
@@ -97,20 +121,24 @@
     background-color: white;
     color: #53bdeb;
 }
+
 .txt-notification h4 {
     font-size: 1rem;
     font-weight: 400;
     padding-bottom: .2rem;
 }
+
 .txt-notification p {
     font-size: .9rem;
     font-weight: 200;
 }
+
 .txt-notification span {
     padding-top: .2rem;
     font-size: .9rem;
     font-weight: 400;
 }
+
 .svg-notification-cross {
     display: flex;
     align-items: center;
@@ -121,11 +149,13 @@
     width: 40px;
     color: white;
 }
+
 .link-into-txt-notification {
     display: flex;
     align-items: center;
     gap: .2rem;
 }
+
 .link-into-txt-notification a {
     color: inherit;
     text-decoration: none;
@@ -142,29 +172,35 @@
     list-style-type: none;
     border-bottom: 0.5px solid rgba(128, 128, 128, 0.581);
 }
+
 .span-inner-ul-li-chat {
     width: 50%;
     display: flex;
     align-items: center;
 
 }
+
 .span-txt-chat {
     width: 100%;
     display: flex;
     flex-direction: column;
     gap: .3rem;
 }
+
 .span-txt-chat p {
     color: #6b7b85;
 }
+
 .txtP-svg-read-chat {
     display: flex;
     align-items: flex-start;
     gap: .3rem;
 }
+
 .txtP-svg-read-chat svg {
     color: #25d366;
 }
+
 .data-chat {
     display: flex;
     flex-direction: column;
@@ -174,6 +210,7 @@
     padding: 0 1rem 0 0;
     color: #25d366;
 }
+
 .number-of-notification-chat {
     display: flex;
     align-items: center;
@@ -197,11 +234,13 @@
     background-color: violet;
 
 }
+
 .div-main-when-nothing-on-page {
     width: 100%;
     height: 100%;
     background-color: #f0f2f5;
 }
+
 .when-nothing-on-page {
     width: 100%;
     height: 90%;
@@ -211,10 +250,12 @@
     align-items: center;
     background-color: #f0f2f5;
 }
+
 .when-nothing-on-page span {
     width: 70%;
     padding: 3rem;
 }
+
 .container-footer-when-nothing-on-page {
     display: flex;
     justify-content: center;
@@ -227,6 +268,7 @@
     height: 100%;
     background-color: #f0f2f5;
 }
+
 .main-ul-nav-chats {
     display: flex;
     align-items: center;
@@ -234,20 +276,24 @@
     list-style-type: none;
     padding: .7rem 2rem;
 }
+
 .main-content-nav-inner-ul-li {
     display: flex;
     align-items: center;
 }
-.main-txt-container span{
+
+.main-txt-container span {
     color: #6b7b85;
     font-size: .8rem;
 }
+
 .main-svg-content-inner-ul-li {
     display: flex;
     gap: 1.5rem;
     color: #6b7b85;
     margin-right: 2rem;
 }
+
 .main-img-bg-whatapp {
     padding: 2rem;
     background-image: url("https://www.hwupgrade.it/i/n/windows11_leak_720.jpg");
@@ -256,30 +302,35 @@
     box-shadow: inset 0px 1px 14px 3px rgb(255, 255, 255);
     width: 100%;
     height: 100%;
-    overflow: hidden;
+    overflow: scroll;
     object-fit: cover;
 }
+
 .main-footer-chats-container {
     position: absolute;
     bottom: 0;
     width: 100%;
-    background-color:#f0f2f5 ;
+    background-color: #f0f2f5;
     padding: 1.5rem 2rem;
 }
+
 .main-ul-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
     list-style-type: none;
 }
+
 .inner-li-footer-main {
     display: flex;
     align-items: center;
     gap: 1.5rem;
 }
+
 .main-svg-footer-smile {
     margin: 0 1rem;
 }
+
 .inner-footer-input {
     background-color: white;
     border-radius: 2rem;
@@ -287,22 +338,24 @@
     width: 54vw;
 }
 
-
 .message-received {
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
     margin: 0 auto;
     max-width: 90%;
-    
 }
+
 .message-sent {
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: column;
     margin: 0 auto;
     max-width: 90%;
 }
+
 .innerBox-message-received {
     width: 60%;
     position: relative;
@@ -311,6 +364,7 @@
     border-radius: 1rem;
     margin-bottom: 2rem;
 }
+
 .innerBox-message-sent {
     position: relative;
     background-color: #d9fdd3;
@@ -319,6 +373,7 @@
     border-radius: 1rem;
     margin-bottom: 2rem;
 }
+
 .span-innerBox-cloud-right {
     position: absolute;
     top: 0;
@@ -326,6 +381,7 @@
     transform: translate(45%, -23%);
 
 }
+
 .span-innerBox-cloud-left {
     position: absolute;
     bottom: 0;

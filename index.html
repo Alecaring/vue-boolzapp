@@ -14,6 +14,8 @@
 
         <header>
             <div class="container-header">
+
+                <!-- todo: profilo -->
                 <nav class="inner-nav-container">
                     <span>
                         <img class="img-avatar-user" src="./img/avataaars(4).png" alt="">
@@ -60,7 +62,8 @@
                         </li>
                     </ul>
                 </nav>
-                
+
+                <!-- todo: barra di ricerca -->
                 <div class="header-input-container">
 
                     <div class="main-serch-container">
@@ -89,6 +92,7 @@
 
                 </div>
 
+                <!-- todo: notifica -->
                 <div v-show="attivaNotifiche" class="header-notification-container">
                     <ul class="ul-inner-notification">
                         <li>
@@ -127,42 +131,48 @@
                     </ul>
                 </div>
 
-                <div v-for="(contact, index) in contacts" :key="index" class="chat-container">
+                <!-- todo: contatti -->
+                <div class="overflow-scroll-contact">
+                    <div v-for="(contact, index) in contacts" :key="index" class="chat-container" 
+                    
+                    @click="changeChatContact(index)">
 
-                    <ul class="ul-inner-chat">
+                        <ul class="ul-inner-chat">
 
-                        <li class="span-inner-ul-li-chat">
-                            <span>
-                                <img class="img-avatar-user"
-                                    src="https://media-fco2-1.cdn.whatsapp.net/v/t61.24694-24/410798106_1041656963601141_8627402011412965568_n.jpg?stp=dst-jpg_s96x96&ccb=11-4&oh=01_Q5AaIL0HOfzsBQw9dqYzHx2AhTIX9h8U_K3L6ZcfQDPFt0tF&oe=66334A3F&_nc_sid=e6ed6c&_nc_cat=110"
-                                    alt="">
-                            </span>
-                            <span class="span-txt-chat">
-                                <h4>{{ contact.name }}</h4>
-                                <span class="txtP-svg-read-chat">
+                            <li class="span-inner-ul-li-chat">
+                                <span>
+                                    <img class="img-avatar-user"
+                                        src="https://media-fco2-1.cdn.whatsapp.net/v/t61.24694-24/410798106_1041656963601141_8627402011412965568_n.jpg?stp=dst-jpg_s96x96&ccb=11-4&oh=01_Q5AaIL0HOfzsBQw9dqYzHx2AhTIX9h8U_K3L6ZcfQDPFt0tF&oe=66334A3F&_nc_sid=e6ed6c&_nc_cat=110"
+                                        alt="">
+                                </span>
+                                <span class="span-txt-chat">
+                                    <h4>{{ contact.name }}</h4>
+                                    <span class="txtP-svg-read-chat">
 
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                                        class="bi bi-check-all" viewBox="0 0 16 16">
-                                        <path
-                                            d="M8.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L2.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093L8.95 4.992zm-.92 5.14.92.92a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 1 0-1.091-1.028L9.477 9.417l-.485-.486z" />
-                                    </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                            fill="currentColor" class="bi bi-check-all" viewBox="0 0 16 16">
+                                            <path
+                                                d="M8.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L2.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093L8.95 4.992zm-.92 5.14.92.92a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 1 0-1.091-1.028L9.477 9.417l-.485-.486z" />
+                                        </svg>
 
-                                    <p class="truncate">{{ contact.messages[contact.messages.length - 1].message }}</p>
+                                        <p class="truncate">{{ contact.messages[contact.messages.length - 1].message }}
+                                        </p>
+
+                                    </span>
 
                                 </span>
+                            </li>
 
-                            </span>
-                        </li>
-
-                        <li class="data-chat">
-                            <span>
-                                14:00
-                            </span>
-                            <span class="number-of-notification-chat">
-                                3
-                            </span>
-                        </li>
-                    </ul>
+                            <li class="data-chat">
+                                <span>
+                                    14:00
+                                </span>
+                                <span class="number-of-notification-chat">
+                                    3
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
@@ -285,37 +295,49 @@
                         </ul>
                     </nav>
 
-                    <div    
-                            class="main-img-bg-whatapp">
+                    <div class="scroll-chats">
+                        <div class="main-img-bg-whatapp ">
 
 
-                        <div     
-                                class="message-received">
-                            <div 
-                                
-                                class="innerBox-message-received">
+                            <div class="message-received">
+                                <div class="innerBox-message-received">
 
-                                <span class="span-innerBox-cloud-left">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="white" class="bi bi-caret-up-fill" viewBox="0 0 16 16">
-                                        <path d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z"/>
-                                      </svg>
-                                </span>
-                                dvsfb 
+                                    <span class="span-innerBox-cloud-left">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="white"
+                                            class="bi bi-caret-up-fill" viewBox="0 0 16 16">
+                                            <path
+                                                d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z" />
+                                        </svg>
+                                    </span>
+
+                                    <span>
+
+                                    </span>
+                                </div>
+
+
+
+
                             </div>
-                            
-                        </div>
-                        <div class="message-sent">
-                            <div class="innerBox-message-sent">
-                                <span class="span-innerBox-cloud-right">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#d9fdd3" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
-                                        <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
-                                      </svg>
-                                </span>
-                                nono, per capirne un po di piu, ce un modo ma non ho capito
+                            <div class="message-sent">
+                                <div class="innerBox-message-sent">
+                                    <span class="span-innerBox-cloud-right">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#d9fdd3"
+                                            class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+                                            <path
+                                                d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+                                        </svg>
+                                    </span>
+
+                                    <span>
+                                        ciaoooo
+                                    </span>
+                                </div>
                             </div>
+
                         </div>
-                        
                     </div>
+
 
                     <div class="main-footer-chats-container">
                         <ul class="main-ul-footer">
@@ -323,26 +345,44 @@
                                 <div class="inner-li-footer-main">
                                     <div>
                                         <span class="main-svg-footer-smile">
-                                            <svg viewBox="0 0 24 24" height="24" width="24" preserveAspectRatio="xMidYMid meet" class="x23j0i4 xd7y6wv" version="1.1" x="0px" y="0px" enable-background="new 0 0 24 24"><title>smiley</title><path fill="#6b7b85" d="M9.153,11.603c0.795,0,1.439-0.879,1.439-1.962S9.948,7.679,9.153,7.679 S7.714,8.558,7.714,9.641S8.358,11.603,9.153,11.603z M5.949,12.965c-0.026-0.307-0.131,5.218,6.063,5.551 c6.066-0.25,6.066-5.551,6.066-5.551C12,14.381,5.949,12.965,5.949,12.965z M17.312,14.073c0,0-0.669,1.959-5.051,1.959 c-3.505,0-5.388-1.164-5.607-1.959C6.654,14.073,12.566,15.128,17.312,14.073z M11.804,1.011c-6.195,0-10.826,5.022-10.826,11.217 s4.826,10.761,11.021,10.761S23.02,18.423,23.02,12.228C23.021,6.033,17.999,1.011,11.804,1.011z M12,21.354 c-5.273,0-9.381-3.886-9.381-9.159s3.942-9.548,9.215-9.548s9.548,4.275,9.548,9.548C21.381,17.467,17.273,21.354,12,21.354z  M15.108,11.603c0.795,0,1.439-0.879,1.439-1.962s-0.644-1.962-1.439-1.962s-1.439,0.879-1.439,1.962S14.313,11.603,15.108,11.603z"></path></svg>
+                                            <svg viewBox="0 0 24 24" height="24" width="24"
+                                                preserveAspectRatio="xMidYMid meet" class="x23j0i4 xd7y6wv"
+                                                version="1.1" x="0px" y="0px" enable-background="new 0 0 24 24">
+                                                <title>smiley</title>
+                                                <path fill="#6b7b85"
+                                                    d="M9.153,11.603c0.795,0,1.439-0.879,1.439-1.962S9.948,7.679,9.153,7.679 S7.714,8.558,7.714,9.641S8.358,11.603,9.153,11.603z M5.949,12.965c-0.026-0.307-0.131,5.218,6.063,5.551 c6.066-0.25,6.066-5.551,6.066-5.551C12,14.381,5.949,12.965,5.949,12.965z M17.312,14.073c0,0-0.669,1.959-5.051,1.959 c-3.505,0-5.388-1.164-5.607-1.959C6.654,14.073,12.566,15.128,17.312,14.073z M11.804,1.011c-6.195,0-10.826,5.022-10.826,11.217 s4.826,10.761,11.021,10.761S23.02,18.423,23.02,12.228C23.021,6.033,17.999,1.011,11.804,1.011z M12,21.354 c-5.273,0-9.381-3.886-9.381-9.159s3.942-9.548,9.215-9.548s9.548,4.275,9.548,9.548C21.381,17.467,17.273,21.354,12,21.354z  M15.108,11.603c0.795,0,1.439-0.879,1.439-1.962s-0.644-1.962-1.439-1.962s-1.439,0.879-1.439,1.962S14.313,11.603,15.108,11.603z">
+                                                </path>
+                                            </svg>
                                         </span>
                                         <span>
-                                            <svg viewBox="0 0 24 24" height="24" width="24" preserveAspectRatio="xMidYMid meet" class="" fill="none"><title>attach-menu-plus</title><path fill-rule="evenodd" clip-rule="evenodd" d="M20.5 13.2501L20.5 10.7501L13.25 10.7501L13.25 3.5L10.75 3.5L10.75 10.7501L3.5 10.7501L3.5 13.2501L10.75 13.2501L10.75 20.5L13.25 20.5L13.25 13.2501L20.5 13.2501Z" fill="#6b7b85"></path></svg>
+                                            <svg viewBox="0 0 24 24" height="24" width="24"
+                                                preserveAspectRatio="xMidYMid meet" class="" fill="none">
+                                                <title>attach-menu-plus</title>
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M20.5 13.2501L20.5 10.7501L13.25 10.7501L13.25 3.5L10.75 3.5L10.75 10.7501L3.5 10.7501L3.5 13.2501L10.75 13.2501L10.75 20.5L13.25 20.5L13.25 13.2501L20.5 13.2501Z"
+                                                    fill="#6b7b85"></path>
+                                            </svg>
                                         </span>
                                     </div>
-                                    
+
                                     <div class="inner-footer-input">
-                                        <input class="input" type="text"            aria-label="insertTxt" id="insertTxt"
-                                        placeholder="Scrivi un messaggio">
+                                        <input class="input" type="text" aria-label="insertTxt" id="insertTxt"
+                                            placeholder="Scrivi un messaggio">
                                     </div>
                                 </div>
                             </li>
                             <li>
                                 <span>
-                                    <svg viewBox="0 0 24 24" height="24" width="24" preserveAspectRatio="xMidYMid meet" class="" version="1.1" x="0px" y="0px" enable-background="new 0 0 24 24"><title>ptt</title><path fill="#6b7b85" d="M11.999,14.942c2.001,0,3.531-1.53,3.531-3.531V4.35c0-2.001-1.53-3.531-3.531-3.531 S8.469,2.35,8.469,4.35v7.061C8.469,13.412,9.999,14.942,11.999,14.942z M18.237,11.412c0,3.531-2.942,6.002-6.237,6.002 s-6.237-2.471-6.237-6.002H3.761c0,4.001,3.178,7.297,7.061,7.885v3.884h2.354v-3.884c3.884-0.588,7.061-3.884,7.061-7.885 L18.237,11.412z"></path></svg>
+                                    <svg viewBox="0 0 24 24" height="24" width="24" preserveAspectRatio="xMidYMid meet"
+                                        class="" version="1.1" x="0px" y="0px" enable-background="new 0 0 24 24">
+                                        <title>ptt</title>
+                                        <path fill="#6b7b85"
+                                            d="M11.999,14.942c2.001,0,3.531-1.53,3.531-3.531V4.35c0-2.001-1.53-3.531-3.531-3.531 S8.469,2.35,8.469,4.35v7.061C8.469,13.412,9.999,14.942,11.999,14.942z M18.237,11.412c0,3.531-2.942,6.002-6.237,6.002 s-6.237-2.471-6.237-6.002H3.761c0,4.001,3.178,7.297,7.061,7.885v3.884h2.354v-3.884c3.884-0.588,7.061-3.884,7.061-7.885 L18.237,11.412z">
+                                        </path>
+                                    </svg>
                                 </span>
                             </li>
                         </ul>
-
 
 
                     </div>

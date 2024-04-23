@@ -5,7 +5,9 @@ const { createApp } = Vue
   createApp({
     data() {
       return {
+
         attivaNotifiche: true,
+        activeIndex: 0,
 
         contacts: [
             {
@@ -171,6 +173,12 @@ const { createApp } = Vue
             }
         ]
       }
+    },
+    methods: {
+        changeChatContact: function(changeIndex) {
+            this.activeIndex = changeIndex
+            console.log(changeChatContact);
+        }
     },
     
   }).mount('#app')
