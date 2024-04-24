@@ -270,6 +270,7 @@
 }
 
 .main-ul-nav-chats {
+    height: 10vh;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -307,6 +308,7 @@
 }
 
 .main-footer-chats-container {
+    height: 10vh;
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -315,6 +317,7 @@
 }
 
 .main-ul-footer {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -322,6 +325,7 @@
 }
 
 .inner-li-footer-main {
+    width: 90%;
     display: flex;
     align-items: center;
     gap: 1.5rem;
@@ -335,7 +339,7 @@
     background-color: white;
     border-radius: 2rem;
     padding: 1rem;
-    width: 54vw;
+    width: 50vw;
 }
 
 .message-received {
@@ -379,7 +383,7 @@
     top: 0;
     right: 0;
     transform: translate(45%, -23%);
-
+    color: #d9fdd3;
 }
 
 .span-innerBox-cloud-left {
@@ -387,4 +391,5 @@
     bottom: 0;
     left: 0;
     transform: translate(-45%, 31%);
+    color: white;
 }

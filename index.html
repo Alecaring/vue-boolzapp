@@ -133,9 +133,8 @@
 
                 <!-- todo: contatti -->
                 <div class="overflow-scroll-contact">
-                    <div v-for="(contact, index) in contacts" :key="index" class="chat-container" 
-                    
-                    @click="changeChatContact(index)">
+                    <div v-for="(contact, index) in contacts" :key="index" class="chat-container"
+                        @click="changeChats(index)">
 
                         <ul class="ul-inner-chat">
 
@@ -177,6 +176,9 @@
             </div>
 
         </header>
+
+
+
 
         <main>
             <div class="container-main">
@@ -253,7 +255,7 @@
                     </div>
                 </div>
 
-                <div v-for="(contact, index) in contacts" :key="index" class="main-container-chats">
+                <div class="main-container-chats">
                     <nav>
                         <ul class="main-ul-nav-chats">
                             <li>
@@ -264,7 +266,7 @@
                                             alt="">
                                     </span>
                                     <span class="main-txt-container">
-                                        <h4>{{ contact.name }}</h4>
+                                        <h4>{{ contacts[activeIndex].name }}</h4>
                                         <span>Ultimo accesso oggi alle 14:00</span>
                                     </span>
 
@@ -298,39 +300,29 @@
                     <div class="scroll-chats">
                         <div class="main-img-bg-whatapp ">
 
-
-                            <div class="message-received">
-                                <div class="innerBox-message-received">
-
-                                    <span class="span-innerBox-cloud-left">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="white"
-                                            class="bi bi-caret-up-fill" viewBox="0 0 16 16">
+                            <!--todo: chats -->
+                            <div    v-for="(curMessage, index) in contacts[activeIndex].messages" 
+                                    :key="index"
+                                    :class="curMessage.status === 'sent' ? 'message-received' : 'message-sent'">
+                                <div
+                                        :class="curMessage.status === 'sent' ? 'innerBox-message-received' : 'innerBox-message-sent'">
+                                    <span
+                                            :class="curMessage.status === 'sent' ? 'span-innerBox-cloud-left' : 'span-innerBox-cloud-right'">
+                                        <svg 
+                                                xmlns="http://www.w3.org/2000/svg" 
+                                                width="40" 
+                                                height="40"
+                                                fill="currentColor" 
+                                                viewBox="0 0 16 16">
                                             <path
-                                                d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z" />
+                                                    :d="curMessage.status === 'sent' ? 
+                                                    'm7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z' 
+                                                    : 
+                                                    'M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'" />
                                         </svg>
                                     </span>
-
                                     <span>
-
-                                    </span>
-                                </div>
-
-
-
-
-                            </div>
-                            <div class="message-sent">
-                                <div class="innerBox-message-sent">
-                                    <span class="span-innerBox-cloud-right">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#d9fdd3"
-                                            class="bi bi-caret-down-fill" viewBox="0 0 16 16">
-                                            <path
-                                                d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
-                                        </svg>
-                                    </span>
-
-                                    <span>
-                                        ciaoooo
+                                        {{ curMessage.message }}
                                     </span>
                                 </div>
                             </div>
@@ -366,7 +358,7 @@
                                     </div>
 
                                     <div class="inner-footer-input">
-                                        <input class="input" type="text" aria-label="insertTxt" id="insertTxt"
+                                        <input v-model="chtatsSentFromUser" class="input" type="text" aria-label="insertTxt" id="insertTxt"
                                             placeholder="Scrivi un messaggio">
                                     </div>
                                 </div>
@@ -393,6 +385,8 @@
         </main>
 
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.4/build/global/luxon.min.js"></script>
     <script src="./js/app.js"></script>
 </body>
 
