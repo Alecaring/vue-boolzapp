@@ -5,16 +5,21 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
+            
+            
+            chtatsSentFromUser: "",
+            scrollWindowChatVar: false,
+            
 
             attivaNotifiche: true,
             activeIndex: 0,
-            chtatsSentFromUser: "",
 
             contacts: [
                 {
-                    name: 'Michele',
-                    avatar: '_1',
+                    name: 'Will Smith',
+                    avatar: 'https://www.ivanlarusca.it/wp-content/uploads/2020/01/1.jpg',
                     visible: true,
+                    wStato: "",
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
@@ -34,8 +39,8 @@ createApp({
                     ],
                 },
                 {
-                    name: 'Fabio',
-                    avatar: '_2',
+                    name: 'Albert E.',
+                    avatar: 'https://www.repstatic.it/content/nazionale/img/2013/12/15/173502931-f75338ee-26b2-49b7-95fd-3bc7d7222d52.jpg',
                     visible: true,
                     messages: [
                         {
@@ -56,8 +61,8 @@ createApp({
                     ],
                 },
                 {
-                    name: 'Samuele',
-                    avatar: '_3',
+                    name: 'Cristiano R.',
+                    avatar: 'https://www.adnkronos.com/resources/028c-1aad26f2e767-bc91f0a68060-1000/format/big/cristianoronaldo_ipa_fg.jpeg',
                     visible: true,
                     messages: [
                         {
@@ -78,8 +83,8 @@ createApp({
                     ],
                 },
                 {
-                    name: 'Alessandro B.',
-                    avatar: '_4',
+                    name: 'Leonardo di C.',
+                    avatar: 'https://www.attorifamosi.it/img/common/leonardo-dicaprio-profilo.jpg',
                     visible: true,
                     messages: [
                         {
@@ -95,8 +100,8 @@ createApp({
                     ],
                 },
                 {
-                    name: 'Alessandro L.',
-                    avatar: '_5',
+                    name: 'Shakira M.',
+                    avatar: 'https://www.105.net/resizer/1000/683/true/43_insta_shakira-1700228159787.jpg--shakira___com_e_cambiata_la_mia_vita_dopo_l_addio_a_pique_.jpg?1700228159817',
                     visible: true,
                     messages: [
                         {
@@ -112,8 +117,8 @@ createApp({
                     ],
                 },
                 {
-                    name: 'Claudia',
-                    avatar: '_6',
+                    name: 'Emily R.',
+                    avatar: 'https://hips.hearstapps.com/hmg-prod/images/gettyimages-854255966-1519991885.jpg?resize=2048:*',
                     visible: true,
                     messages: [
                         {
@@ -134,8 +139,8 @@ createApp({
                     ],
                 },
                 {
-                    name: 'Federico',
-                    avatar: '_7',
+                    name: 'Charles L.',
+                    avatar: 'https://variety.com/wp-content/uploads/2023/10/wme-client.jpg?w=1000',
                     visible: true,
                     messages: [
                         {
@@ -151,8 +156,8 @@ createApp({
                     ],
                 },
                 {
-                    name: 'Davide',
-                    avatar: '_8',
+                    name: 'Charlotte de W.',
+                    avatar: 'https://www.papido.it/gallery/image.php?src=italia/upload/dj454/945472charlotte-de-witte-dj-foto6.jpg&w=640',
                     visible: true,
                     messages: [
                         {
@@ -174,15 +179,43 @@ createApp({
                 }
             ]
         }
+        
     },
+    computed: {
+        newArray() {
+            return {
+                date: '10/01/2020 17:15:22',
+                message: this.chtatsSentFromUser,  // Questo si aggiornerà ora dinamicamente
+                status: 'received'
+            };
+        }
+    },
+    
     methods: {
         changeChats: function (index) {
-            this.activeIndex = index
+            this.activeIndex = index;
+        },
+        
+        snedMessage: function () {
+            this.contacts[this.activeIndex].messages.push(this.newArray);
+            chtatsSentFromUser = "";
+        },
+        removeInitialBanner: function() {
+            const initialBanner = document.getElementById("nothingOnPage").classList.add("none");
+        },
+        InfoHiddenFunc: function() {
+            const InfoHidden = document.getElementById("InfoHidden").classList.toggle("none");
+            
+        },
+        smileWindowFunc: function() {
+            const smileWindow = document.getElementById("smileWindow").classList.toggle("none");
+            let scrollWindowChat = document.getElementById("scrollWindowChat").classList.toggle("scroll-chats-openedSmile");
+        },
+        modalProfile: function() {
+            const modalOn = document.getElementById("ModalIdProfile").classList.toggle("none");
         }
-        // changeChatContact: function(changeIndex) {
-        //     this.activeIndex = changeIndex
-        //     console.log(changeChatContact);
-        // }
+        
+        
     },
 
 }).mount('#app')

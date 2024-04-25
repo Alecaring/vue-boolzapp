@@ -5,19 +5,38 @@
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-
+input:focus {
+    outline: none;
+}
 .none {
     display: none;
+}
+.block {
+    display: block;
+}
+
+.active {
+    background-color: #e9f1fb;
 }
 
 .overflow-scroll-contact {
     overflow: scroll;
-    height: 70vh;
+    height: 65vh;
+    
+}
+.overflow-scroll-contact-after {
+    overflow: scroll;
+    height: 80vh;
     
 }
 .scroll-chats {
-    overflow: scroll;
     height: 80vh;
+}
+.overflow-scroll-contact-main-chats {
+    overflow: scroll;
+}
+.scroll-chats-openedSmile{
+    height: calc(80vh - 35vh);
 }
 
 .truncate {
@@ -42,6 +61,7 @@
 
 .inner-nav-container {
     width: 100%;
+    height: 10vh;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -52,6 +72,8 @@
     height: 50px;
     margin: 0rem 2rem;
     border-radius: 50%;
+    object-fit: cover;
+
 }
 
 .inner-ul-nav {
@@ -64,20 +86,26 @@
 
 
 .header-input-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     width: 100%;
-    padding: .5rem;
+    height: 10vh;
     background-color: white;
 }
 
 .main-serch-container {
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    
 }
 
 .container-inner-input {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     margin: 0 0 0 1rem;
     width: 100%;
     padding: .6rem;
@@ -101,13 +129,18 @@
 }
 
 
+.header-notification-container {
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #53bdeb;
+}
 .ul-inner-notification {
     display: flex;
     justify-content: space-between;
     align-items: center;
     list-style-type: none;
-    background-color: #53bdeb;
-    padding: 1rem 0;
 }
 
 .svg-notification-bell {
@@ -115,27 +148,27 @@
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    margin: 1.3rem;
-    height: 40px;
-    width: 40px;
+    margin: 0 1vw;
+    height: 4vw;
+    width: 4vw;
     background-color: white;
     color: #53bdeb;
 }
 
 .txt-notification h4 {
-    font-size: 1rem;
+    font-size: 1.2vw;
     font-weight: 400;
-    padding-bottom: .2rem;
+    padding-bottom: .4vw;
 }
 
 .txt-notification p {
-    font-size: .9rem;
+    font-size: 1vw;
     font-weight: 200;
 }
 
 .txt-notification span {
-    padding-top: .2rem;
-    font-size: .9rem;
+    padding-top: .4vw;
+    font-size: 1vw;
     font-weight: 400;
 }
 
@@ -252,7 +285,7 @@
 }
 
 .when-nothing-on-page span {
-    width: 70%;
+    margin: 0 12vw;
     padding: 3rem;
 }
 
@@ -260,6 +293,7 @@
     display: flex;
     justify-content: center;
 }
+
 
 
 .main-container-chats {
@@ -292,12 +326,12 @@
     display: flex;
     gap: 1.5rem;
     color: #6b7b85;
-    margin-right: 2rem;
+    margin-right: 1rem;
 }
 
 .main-img-bg-whatapp {
     padding: 2rem;
-    background-image: url("https://www.hwupgrade.it/i/n/windows11_leak_720.jpg");
+    background-image: url("https://cdnb.artstation.com/p/assets/images/images/022/345/187/large/hakuna-six-wish-you-were-in-the-offic.jpg?1575071799");
     background-size: cover;
     background-position: center;
     box-shadow: inset 0px 1px 14px 3px rgb(255, 255, 255);
@@ -307,7 +341,12 @@
     object-fit: cover;
 }
 
+
+
 .main-footer-chats-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     height: 10vh;
     position: absolute;
     bottom: 0;
@@ -349,6 +388,7 @@
     flex-direction: column;
     margin: 0 auto;
     max-width: 90%;
+    padding-right: 30vw;
 }
 
 .message-sent {
@@ -358,10 +398,10 @@
     flex-direction: column;
     margin: 0 auto;
     max-width: 90%;
+    padding-left: 30vw;
 }
 
 .innerBox-message-received {
-    width: 60%;
     position: relative;
     background-color: white;
     padding: 2rem;
@@ -392,4 +432,220 @@
     left: 0;
     transform: translate(-45%, 31%);
     color: white;
+}
+.footer-icon-left-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+
+
+.InfoHidden-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: transparent;
+    z-index: 100;
+}
+.InfoHidden {
+    position: absolute;
+    top: 10vh;
+    right: 2%;
+    border-radius: .5rem;
+    width: 15vw;
+    background: white;
+    z-index: 100;
+}
+.ms_info-li {
+    padding: .7vw 2vw;
+
+}
+.ms_info-li:hover {
+    background-color: #e9f1fb;
+}
+.list-style-none {
+    list-style-type: none;
+    padding: 1vw 0;
+}
+.smileWindow-container {
+    
+}
+.smileWindow {
+    position: absolute;
+    bottom: 10vh;
+    right: 0;
+    height: 35vh;
+    width: 100%;
+    background-color: #f0f2f5;
+    z-index: 100;
+
+}
+.header-emoji {
+    width: 100%;
+    height: 5vh;
+    background-color: #f0f2f5;
+}
+.ul-header-emoji {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: .7vw 1rem;
+}
+.ul-header-emoji li {
+    display: flex;
+    justify-content: center;
+    width: calc(100% / 9);
+    color: #6b7b85;
+    font-size: 2vw;
+}
+.ul-header-emoji li:hover {
+    border-bottom: 4px solid #008069;
+}
+.main-emoki-search {
+    width: 100%;
+    height: 5vh;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.div-input-main-emoji {
+    display: flex;
+    align-items: center;
+    width: calc(100% - (5% / 2));
+    border-radius: 1rem;
+    background-color: white;
+    padding: .7vw;
+}
+.input-main-emoji {
+    width: 100%;
+    padding: 0 1.9rem;
+    border: none;
+    font-size: 1.3vw;
+    
+}
+.footer-meji-scroll {
+    width: 100%;
+    height: 25vh;
+    background-color: #f0f2f5;
+    overflow-y: scroll;
+    padding: 2vw;
+}
+.footer-meji-scroll ul{
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    font-size: 2.5vw;
+    gap: 1vw;
+    padding: 2vw;
+}
+.footer-meji-scroll span {
+    padding: 2vw 2vw 0 2vw;
+}
+
+
+.container-profilo-info-esterno {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.367);
+    z-index: 150;
+}
+.container-profilo-info {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    height: 75vh;
+    border-radius: 1rem;
+    background-color: #fff;
+    z-index: 200;
+}
+.container-inner-info-profilo {
+    position: relative;
+    width: 100%;           
+    height: 70%;
+    border-radius: 1rem 1rem 0 0;          
+    box-shadow: inset 0px 20px 80px 300px #2e3ddd;     
+}
+
+.img-container-inner-info-profilo {
+    width: 100%;            /* Fa sì che l'immagine riempia il contenitore */
+    height: 100%; 
+    border-radius: 1rem 1rem 0 0;          /* Fa sì che l'immagine riempia il contenitore */
+    object-fit: cover; 
+    opacity: .9;     /* Assicura che l'immagine copra tutto lo spazio disponibile */
+}
+.container-inner-info-profilo span {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 2vw;
+}
+.bottom-container-inner-info-profilo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem;
+    width: 100%;
+    height: 30%;
+    background-color:#dfe2e7 ;
+    border-radius: 0 0 1rem 1rem;          /* Fa sì che l'immagine riempia il contenitore */
+
+}
+
+.bottom-container-inner-info-profilo h4 {
+    font-size: 3vw;
+    padding: 0 5%;
+    color: #000000b4;
+}
+.bottom-container-info-profilo-description {
+    background-color: #ffffff;
+    margin: 0 auto;
+    width: 90%;
+    padding: 1rem;
+    border-radius: 1rem;
+    height: 50%;
+}
+.span-info {
+    font-style: oblique;
+    font-weight: bold;
+}
+.descrizione-info {
+    padding: .5rem 0;
+}
+.lista-inner-profilo {
+    margin: 0 2.7rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style-type: none;
+}
+.span-icon-inner-info {
+    display: flex;
+    gap: 2vw;
+
+}
+.span-icon-inner-info span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    padding: 1rem;
+    width: 60px;
+    height: 60px;
+    border-radius: 1rem;
+    color: #008069;
+}
+.title-inner-info {
+    width: 30vw;
 }
